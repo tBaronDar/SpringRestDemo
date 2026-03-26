@@ -44,4 +44,8 @@ public class JobService {
     public void load() {
         jobrepo.saveAll(jobs);
     }
+
+    public List<JobPost> searchByKeyword(String keyword) {
+        return jobrepo.findByTitleContainingOrDescriptionContaining(keyword, keyword);
+    }
 }
