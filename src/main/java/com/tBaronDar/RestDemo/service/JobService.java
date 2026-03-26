@@ -26,6 +26,7 @@ public class JobService {
         jobrepo.updateJob(jp);
     }
 
-    public void deletePost(JobPost jp) {
+    public void deletePost(int id) {
+        jobrepo.deleteJob(id);
     }
 }

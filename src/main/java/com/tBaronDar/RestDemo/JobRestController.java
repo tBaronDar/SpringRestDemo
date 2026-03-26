@@ -15,8 +15,9 @@ public class JobRestController {
     @Autowired
     private JobService jobService;
 
+//  @GetMapping(path = "posts", produces = {"application/json"})
     @GetMapping("posts")
-//    @ResponseBody <- if we use @Controller on the class
+//  @ResponseBody <- if we use @Controller on the class
     public List<JobPost> getAllPosts(){
         return jobService.getAllJobs();
     }
@@ -38,9 +39,9 @@ public class JobRestController {
         return jobService.getPost(jp.getId());
     }
 
-    @DeleteMapping("post")
-    public JobPost deletePost(@RequestBody JobPost jp){
-        jobService.deletePost(jp);
-        return jp;
+    @DeleteMapping("post/{id}")
+    public String deletePost(@PathVariable int id){
+        jobService.deletePost(id);
+        return "Post deleted";
     }
 }
