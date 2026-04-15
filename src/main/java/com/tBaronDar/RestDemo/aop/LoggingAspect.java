@@ -23,13 +23,13 @@ public class LoggingAspect {
     }
 
     //use || to add multiple execution()
-    //"execution(* com.tBaronDar.RestDemo.JobRestController.getAllPosts(..)) || execution(* com.tBaronDar.RestDemo.JobRestController.getPost(..))"
-    @Before("execution(* com.tBaronDar.RestDemo.JobRestController.getAllPosts(..))")
+    //"execution(* com.tBaronDar.RestDemo.controller.JobRestController.getAllPosts(..)) || execution(* com.tBaronDar.RestDemo.controller.JobRestController.getPost(..))"
+    @Before("execution(* com.tBaronDar.RestDemo.controller.JobRestController.getAllPosts(..))")
     public void logControllerMethodCall(JoinPoint jp){
         LOGGER.info("Before Controller Method called "+ jp.getSignature().getName());
     }
 
-    @After("execution(* com.tBaronDar.RestDemo.JobRestController.getPost(..))")
+    @After("execution(* com.tBaronDar.RestDemo.controller.JobRestController.getPost(..))")
     public void logAfterControllerMethodCall(JoinPoint jp){
         LOGGER.info("Controller 22 Method called "+ jp.getSignature().getName());
     }

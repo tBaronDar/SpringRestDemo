@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ValidationAspect {
     private final Logger LOGGER = LoggerFactory.getLogger(ValidationAspect.class);
 
-    @Around("execution(* com.tBaronDar.RestDemo.JobRestController.getPost(..)) && args(postId)")
+    @Around("execution(* com.tBaronDar.RestDemo.controller.JobRestController.getPost(..)) && args(postId)")
     public Object validate(ProceedingJoinPoint jp,int postId) throws Throwable {
 
         //check if post id is negative and make it positive

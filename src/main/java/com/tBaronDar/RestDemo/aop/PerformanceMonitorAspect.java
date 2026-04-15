@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class PerformanceMonitorAspect {
     private final Logger LOGGER = LoggerFactory.getLogger(PerformanceMonitorAspect.class);
 
-    @Around("execution(* com.tBaronDar.RestDemo.JobRestController.getPost(..))")
+    @Around("execution(* com.tBaronDar.RestDemo.controller.JobRestController.getPost(..))")
     public Object monitorTime(ProceedingJoinPoint jp) throws Throwable {
 
         long start = System.currentTimeMillis();
